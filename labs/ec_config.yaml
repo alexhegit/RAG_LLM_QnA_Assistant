@@ -1,0 +1,21 @@
+llm:
+  provider: ollama
+  config:
+    model: 'llama2'
+    temperature: 0.5
+    top_p: 1
+    stream: true
+    base_url: 'http://localhost:11434'
+
+embedder:
+  provider: ollama
+  config:
+    model: 'mxbai-embed-large:latest'
+    base_url: http://localhost:11434
+
+vectordb:
+  provider: chroma
+  config:
+    collection_name: 'my-app'
+    dir: db
+    allow_reset: true
