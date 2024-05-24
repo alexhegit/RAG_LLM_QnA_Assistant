@@ -1,3 +1,7 @@
+# Lab7 Use streamlit to run RAG_LLM Q&A
+
+# Usage: At the dir of it and run the command "streamlit run ./Lab7-LlamaIndex_CUM_ST.py"
+
 import os
 # Enalbe 780M with ROCm
 os.environ['HSA_OVERRIDE_GFX_VERSION'] = '11.0.0'
