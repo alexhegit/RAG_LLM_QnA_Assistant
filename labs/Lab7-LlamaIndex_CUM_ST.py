@@ -2,6 +2,14 @@
 
 # Usage: At the dir of it and run the command "streamlit run ./Lab7-LlamaIndex_CUM_ST.py"
 
+# Question Examples
+"""
+What's the steps to SWITCHING THE DAYTIME RUNNING LAMPS ON AND OFF and which pages show it?
+
+
+Which pages could get the detials about Exterior Lighting Control?
+"""
+
 import os
 # Enalbe 780M with ROCm
 os.environ['HSA_OVERRIDE_GFX_VERSION'] = '11.0.0'
@@ -32,7 +40,7 @@ st.info("Check out the full tutorial to build this app in our [blog post](https:
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
-        {"role": "assistant", "content": "Ask me a question about Streamlit's open-source Python library!"}
+        {"role": "assistant", "content": "Ask me a question about User Car Manual!"}
     ]
 
 @st.cache_resource(show_spinner=False)
@@ -79,7 +87,7 @@ def load_data():
 index = load_data()
 
 if "chat_engine" not in st.session_state.keys(): # Initialize the chat engine
-        st.session_state.chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
+        st.session_state.chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True, streaming=True)
 
 if prompt := st.chat_input("Your question"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
