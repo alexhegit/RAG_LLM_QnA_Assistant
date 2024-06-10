@@ -1,4 +1,4 @@
-# RAG_LLM_Q-A_Assistant
+# RAG_LLM_QnA_Assistant
 Demo of Q&amp;A Assistant base on RAG and LLM
 
 ```
